@@ -1,0 +1,25 @@
+<%- include('partials/header') %>
+
+
+<h1>Edit Post</h1>
+
+<form action="/edit" method="post">
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" name="postTitle" value="<%= title %> " >
+  </div>
+  <div class="mb-3" >
+    <label for="post" class="form-label">Post</label>
+    <textarea type="text" class="form-control" id="post" name="postContent"  rows="6" ><%= content %></textarea>
+    <input type="hidden" name="id" value="<%= id %> " >
+  </div>
+  
+  <button type="submit" class="btn btn-primary"><i class="bi bi-pencil-square"></i> Update-Post</button>
+</form>
+
+<form action="/delete" method="post">
+    <input type="hidden" name="id" value="<%= id %> " >
+    <button type="submit" class="btn btn-danger" name="deletePostId" value="<%= id %> "><i class="bi bi-x-lg"></i> Delete-Post</button>
+</form>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,14 @@
+<%- include('partials/header') %>
+
+<h1>Welcome!👋</h1>
+<p>Welcome to your personal Online Diary📔.  <br>If  you wish to compose a post just type ➡️ <b> /compose</b> ⬅️ at the end of the  URL . <br> That's All!👍 </p>
+
+<%# forEach mdn docs                              substring%>
+<% posts.forEach(post => { %>
+<h1><%= post.title %></h1>
+<p><%= post.content.substring(0,100) %>...<a href="/posts/<%=post._id%>">Read More</a></p>
+<% }); %>
+
+<%- include('partials/footer') %>
+
+<link href="/posts/">
